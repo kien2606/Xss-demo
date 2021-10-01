@@ -32,7 +32,7 @@ const start = async () => {
   try {
     await mongoose.connect(
       process.env.MONGODB_URI ||
-        "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false",
+        "mongodb+srv://admin:Admin123@cluster0.qdrmy.mongodb.net/xss?authSource=admin&replicaSet=atlas-oopkjo-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true",
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
