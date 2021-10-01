@@ -41,16 +41,13 @@ const start = async () => {
     );
     console.log("Server connected to MongoDb!");
   } catch (err) {
-    throw new DbConnectionError();
     console.error(err);
   }
-
-  const port = process.env.PORT || 3001;
-  app.listen(port, () => {
-    "server is already done";
-  });
 };
-
+const port = process.env.PORT || 3001;
+app.listen(port, () => {
+  "server is already done";
+});
 start();
 
 // mongoose.connect(
