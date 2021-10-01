@@ -7,7 +7,7 @@ const Catch = require("../models/CatchCookie");
 
 router.get("/", async (req, res) => {
   console.log("catch get");
-  const catchs = await Catch.find();
+  const catchs = await Catch.find().exec();
   console.log(catchs);
   res.json(catchs);
 });

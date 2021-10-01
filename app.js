@@ -19,12 +19,24 @@ app.use("/", catchCookieRouter);
 
 //connect to mongodb
 
+// mongoose.connect(
+//   "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false",
+//   { useNewUrlParser: true },
+//   { useUnifiedTopology: true },
+//   () => {
+//     console.log("connect to db?");
+//   }
+// );
+
 mongoose.connect(
   "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false",
-  { useNewUrlParser: true },
-  { useUnifiedTopology: true },
-  () => {
-    console.log("connect to db?");
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  function (err, res) {
+    try {
+      console.log("Connected to Database");
+    } catch (err) {
+      throw err;
+    }
   }
 );
 
