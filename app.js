@@ -23,12 +23,16 @@ app.use("/catchs", catchCookieRouter);
 
 //connect to mongodb
 
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () => {
-  console.log("connect to db?");
-});
+mongoose.connect(
+  "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false",
+  { useNewUrlParser: true },
+  () => {
+    console.log("connect to db?");
+  }
+);
 
 //listen port
-var port = process.env.PORT || 3001;
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
   "server is already done";
 });
