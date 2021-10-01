@@ -28,7 +28,7 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () => {
 });
 
 //listen port
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
+var port = process.env.PORT || 3001;
+app.listen(port, () => {
   "server is already done";
 });
