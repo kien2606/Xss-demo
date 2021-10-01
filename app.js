@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 
-app.use("/catchs", catchCookieRouter);
+app.use("/", catchCookieRouter);
 
 //connect to mongodb
 
