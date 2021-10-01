@@ -16,7 +16,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // routers
-app.use("/", catchCookieRouter);
 
 //connect to mongodb
 
@@ -32,7 +31,8 @@ app.use("/", catchCookieRouter);
 const start = async () => {
   try {
     await mongoose.connect(
-      "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false",
+      process.env.MONGODB_URI ||
+        "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false",
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -49,6 +49,7 @@ app.listen(port, () => {
   "server is already done";
 });
 start();
+app.use("/", catchCookieRouter);
 
 // mongoose.connect(
 //   "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false",
