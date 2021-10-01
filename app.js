@@ -15,10 +15,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // routers
-app.get("/", (req, res) => {
-  res.send("hello world");
-});
-
 app.use("/", catchCookieRouter);
 
 //connect to mongodb
